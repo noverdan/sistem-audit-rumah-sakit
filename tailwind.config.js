@@ -11,10 +11,10 @@ export default {
     extend: {
       colors: {
         primary: {
-          1: "#0A58CA",
-          2: "#0D6EFD",
-          3: "#3D8BFD",
-          4: "#6EA8FE",
+          4: "#0A58CA",
+          3: "#0D6EFD",
+          2: "#3D8BFD",
+          1: "#6EA8FE",
         },
         warning: "#FF8E26",
         danger: "#FF0000",
