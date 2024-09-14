@@ -1,7 +1,9 @@
+import PageHeader from "../../components/layout/PageHeader";
+
 export default function StatusPasien() {
     return (
-        <div className="w-full ">
-            <h1>Status Pasien</h1>
-        </div>
+        <main className="w-full bg-gray-100 min-w-[1024px]">
+            <PageHeader title="Status Pasien" />
+        </main>
     )
 }

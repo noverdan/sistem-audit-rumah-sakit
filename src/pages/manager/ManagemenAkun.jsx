@@ -1,7 +1,9 @@
+import PageHeader from "../../components/layout/PageHeader";
+
 export default function ManagemenAkun() {
     return (
-        <div className="w-full ">
-            <h1>Managemen Akun</h1>
-        </div>
+        <main className="w-full bg-gray-100 min-w-[1024px]">
+            <PageHeader title="Manajemen Akun Perawat" />
+        </main>
     )
 }
