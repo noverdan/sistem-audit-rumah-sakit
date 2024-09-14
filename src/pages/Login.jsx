@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "../components/common/Button"
 import axios from "axios";
 import { Icon } from '@iconify/react';
-import '../index.css'
 
 export default function Login() {
     const [username, setUsername] = useState();
@@ -13,7 +12,7 @@ export default function Login() {
 
     const submitData = async (e) => {
         e.preventDefault();
-        setError('periksa kata sandi dan username')
+        setError('Periksa kata sandi dan username')
         setInputError({ username: false, password: false });
 
         if (!username || !password) {
@@ -33,7 +32,6 @@ export default function Login() {
 
             // Mengambil token dan role dari respons api
             const { token, role } = response.data;
-
 
             // simpan token di localstorage 
             localStorage.setItem('token', token);
