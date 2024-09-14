@@ -4,6 +4,49 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* Animatioan From Login*/
+.input-text {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 4px;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.input-container input:focus~.input-text,
+.input-container input:not(:placeholder-shown)~.input-text {
+  top: 15px;
+  left: 8px;
+  transform: translateY(-100%);
+  font-size: 16px;
+  color: black;
+}
+
+.input-error {
+  border: 1px solid red;
+
+}
+
+.input-container .input-error~.input-text,
+.input-container input:not(:placeholder-shown)~.input-text {
+  color: red;
+  top: 15px;
+  left: 8px;
+  transform: translateY(-100%);
+  font-size: 16px;
+}
+
+/* End Animatioan Login */
+
+
+
+
+
 html {
   font-family: "Poppins", sans-serif;
   /* font-size: 16px; */
