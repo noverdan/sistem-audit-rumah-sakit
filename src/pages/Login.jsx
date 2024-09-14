@@ -73,7 +73,7 @@ export default function Login() {
                                     placeholder=" "
                                     onChange={(e) => setUsername(e.target.value)}
                                     className={`border border-black border-opacity-50 outline-none rounded-2xl w-full h-12 pl-4 
-                                             transition duration-200 ${inputError.username ? "input-error" : ""
+                                             focus:text-black transition duration-200 ${inputError.username ? "input-error" : ""
                                         }`}
                                 />
                                 <label className="input-text">Username</label>
