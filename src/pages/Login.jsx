@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../components/common/Button"
 import axios from "axios";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Icon } from '@iconify/react';
 import '../index.css'
 
 export default function Login() {
@@ -91,7 +91,7 @@ export default function Login() {
                                 <label className="input-text">Password</label>
                                 <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2"
                                     onClick={() => setShowPassword(!showPassword)}>
-                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    {showPassword ? <Icon icon="mdi:eye-off-outline" width={20} /> : <Icon icon="mdi:eye-outline" width={20} />}
                                 </button>
                             </div>
 
