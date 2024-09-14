@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Tooltip } from 'react-tooltip';
+import { Icon } from '@iconify/react';
 
 const buttonSizing = {
     // comment pixel size based on root element 16px
@@ -31,7 +32,7 @@ const buttonSizing = {
     },
 };
 
-export default function Button({ text, size, onClick, leading, trailing, tooltip, id, ...props }) {
+export default function Button({ text, size, onClick, leading, trailing, tooltip, disabled, isLoading, id, ...props }) {
 
     const buttonSize = () => {
         if (size === "small") {
@@ -59,14 +60,23 @@ export default function Button({ text, size, onClick, leading, trailing, tooltip
                 className={
                     "flex items-center select-none bg-primary-4 text-sm font-medium text-white transition duration-200 hover:bg-none active:bg-black" +
                     gradientBg +
-                    dynamicStyles
+                    dynamicStyles +
+                    (disabled ? "opacity-50 cursor-not-allowed" : "")
                 }
                 onClick={onClick}
+                disabled={disabled}
                 {...props}
             >
-                {leading}
-                {text}
-                {trailing}
+                {
+                    isLoading ? (
+                        <Icon icon="line-md:loading-loop" width={20} />
+                    ) :
+                        <>
+                            {leading}
+                            {text}
+                            {trailing}
+                        </>
+                }
             </button>
 
             {
@@ -94,4 +104,6 @@ Button.propTypes = {
     trailing: PropTypes.element,
     tooltip: PropTypes.string,
     id: PropTypes.string,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
 };
