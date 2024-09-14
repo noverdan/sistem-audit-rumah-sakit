@@ -30,12 +30,12 @@ html {
 }
 
 .input-error {
-  border: 1px solid #888888;
+  border: 2px solid #ee0d0d;
 }
 
 .input-container .input-error ~ .input-text,
 .input-container input:not(:placeholder-shown) ~ .input-text {
-  color: #888888;
+  color: black;
   top: 15px;
   left: 8px;
   transform: translateY(-100%);
