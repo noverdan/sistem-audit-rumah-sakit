@@ -45,6 +45,6 @@ export default function CardPatientInfo({ total, increase, type }) {
 
 CardPatientInfo.propTypes = {
     total: PropTypes.number.isRequired,
-    increase: PropTypes.func.isRequired,
+    increase: PropTypes.number.isRequired,
     type: PropTypes.oneOf(['dirawat', 'sembuh']).isRequired
 };
