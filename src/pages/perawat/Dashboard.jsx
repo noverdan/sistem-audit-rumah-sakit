@@ -1,6 +1,7 @@
 import PageHeader from "../../components/layout/PageHeader"
 import CardPatientInfo from "../../components/layout/CardPatientInfo"
 import PatientChart from "../../components/layout/PatientChart"
+import FrequencyPatient from "../../components/layout/FrequencyPatient"
 
 const pasienDirawat = {
     harian: [
@@ -158,6 +159,81 @@ const pasienDirawat = {
     ]
 }
 
+const frekuensiPasien = [
+    {
+        id: 1,
+        x: 'Jan',
+        total: 100,
+        bulan: 'Januari'
+    },
+    {
+        id: 2,
+        x: 'Feb',
+        total: 150,
+        bulan: 'Februari'
+    },
+    {
+        id: 3,
+        x: 'Mar',
+        total: 50,
+        bulan: 'Maret'
+    },
+    {
+        id: 4,
+        x: 'Apr',
+        total: 80,
+        bulan: 'April'
+    },
+    {
+        id: 5,
+        x: 'Mei',
+        total: 160,
+        bulan: 'Mei'
+    },
+    {
+        id: 6,
+        x: 'Jun',
+        total: 110,
+        bulan: 'Juni'
+    },
+    {
+        id: 7,
+        x: 'Jul',
+        total: 126,
+        bulan: 'Juli'
+    },
+    {
+        id: 8,
+        x: 'Agu',
+        total: 70,
+        bulan: 'Agustus'
+    },
+    {
+        id: 9,
+        x: 'Sep',
+        total: 140,
+        bulan: 'September'
+    },
+    {
+        id: 10,
+        x: 'Okt',
+        total: 90,
+        bulan: 'Oktober'
+    },
+    {
+        id: 11,
+        x: 'Nov',
+        total: 110,
+        bulan: 'November'
+    },
+    {
+        id: 12,
+        x: 'Des',
+        total: 150,
+        bulan: 'Desember'
+    }
+]
+
 export default function DashboardPerawat() {
     return (
         <main className="w-full bg-gray-100 min-w-[720px]">
@@ -168,6 +244,7 @@ export default function DashboardPerawat() {
                     <CardPatientInfo total={952} increase={-91} type="sembuh" />
                 </section>
                 <PatientChart data={pasienDirawat} />
+                <FrequencyPatient data={frekuensiPasien} />
             </div>
         </main>
     )
