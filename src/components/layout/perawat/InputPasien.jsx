@@ -55,7 +55,7 @@ export default function InputPasien() {
 
                 <div className="flex flex-col font-sans font-medium w-[627px] gap-8  items-end">
                     <div className="flex gap-5 items-center">
-                        <label className="font-sans text-base">No. Rekam Medis: </label>
+                        <label className="font-sans text-base">No. Rekam Medis : </label>
                         <input
                             type="text"
                             className="w-96 h-14 rounded-md shadow-md p-5"
@@ -64,7 +64,7 @@ export default function InputPasien() {
                         />
                     </div>
                     <div className="flex gap-5 items-center">
-                        <label className="font-sans text-base">Nama Pasien: </label>
+                        <label className="font-sans text-base">Nama Pasien : </label>
                         <input
                             type="text"
                             className="w-96 h-14 rounded-md shadow-md p-5"
@@ -75,7 +75,7 @@ export default function InputPasien() {
                 </div>
 
                 <div className="flex gap-5 font-sans font-medium w-[598px] justify-items-end justify-end items-end">
-                    <label className="font-sans text-base">Kategori Pasien: </label>
+                    <label className="font-sans text-base">Kategori Pasien : </label>
                     <div>
                         <label className="flex items-center space-x-1">
                             <input
@@ -102,7 +102,7 @@ export default function InputPasien() {
 
                 <div className="flex flex-col gap-8 w-[450px] items-end">
                     <div className="flex gap-5 items-center font-sans font-medium space-x-1">
-                        <label>Tipe Kamar: </label>
+                        <label>Tipe Kamar : </label>
                         <Dropdown
                             span={'Pilih Kamar'}
                             placeholder="Pilih Kamar"
@@ -114,7 +114,7 @@ export default function InputPasien() {
                     </div>
 
                     <div className="flex gap-5 items-center font-sans font-medium space-x-1">
-                        <label>Status Pasien: </label>
+                        <label>Status Pasien : </label>
                         <Dropdown
                             span={'Status Pasien'}
                             placeholder="Status Pasien"

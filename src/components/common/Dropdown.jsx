@@ -14,7 +14,7 @@ const Dropdown = ({ span, options, className }) => {
                 <select
                     value={selected}
                     onChange={handleChange}
-                    className={`${className} appearance-none bg-white border border-gray-300 rounded-lg shadow-sm`}
+                    className={`${className} appearance-none bg-white border border-gray-300 rounded-lg shadow-sm focus:border-none`}
                 >
                     {selected ? (
                         <option value={selected}>{selected}</option>
