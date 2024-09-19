@@ -58,7 +58,7 @@ export default function Button({ text, size, onClick, leading, trailing, tooltip
             <button
                 id={id}
                 className={
-                    "flex items-center select-none bg-primary-4 text-sm font-medium text-white transition duration-200 hover:bg-none active:bg-black" +
+                    "flex items-center w-fit select-none bg-primary-4 text-sm font-medium text-white transition duration-200 hover:bg-none active:bg-black" +
                     gradientBg +
                     dynamicStyles +
                     (disabled ? "opacity-50 cursor-not-allowed" : "")
