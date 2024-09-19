@@ -58,7 +58,7 @@ export default function PatientChart({ data }) {
                 <div tabIndex='0' onBlur={() => setShowListSort(false)} onClick={() => setShowListSort(!showListSort)} className="flex relative items-center gap-1 text-primary-3 select-none cursor-pointer hover:text-primary-4">
                     <p className="text-sm">{sort}</p>
                     <Icon icon="teenyicons:down-solid" width={10} />
-                    <div className={`absolute top-7 shadow w-fit bg-white ${showListSort ? 'visible' : 'invisible'}`}>
+                    <div className={`absolute top-7 shadow w-fit bg-white transition-all duration-100 ${showListSort ? "visible opacity-100 " : "invisible opacity-0 -translate-y-5"}`}>
                         <ul className="text-xs w-fit h-full border border-stroke">
                             <li onClick={() => setSort(grafik.HARIAN)} className="p-2 hover:bg-gray-200 text-nowrap">{grafik.HARIAN}</li>
                             <li onClick={() => setSort(grafik.MINGGUAN)} className="p-2 hover:bg-gray-200 text-nowrap">{grafik.MINGGUAN}</li>

@@ -19,7 +19,7 @@ export default function PageHeader({ title }) {
                         <p className="text-xs text-gray-500">Perawat</p>{/* Change this to the role */}
                     </div>
                 </div>
-                <div className={`left-0 top-[110%] bg-white py-2 shadow absolute border-stroke border w-full transition-all duration-100 ${isDropdownMenu ? "visible opacity-100 " : "invisible opacity-0 -translate-y-1/2"}`}>
+                <div className={`left-0 top-[110%] bg-white py-2 shadow absolute border-stroke border w-full transition-all duration-100 ${isDropdownMenu ? "visible opacity-100 " : "invisible opacity-0 -translate-y-5"}`}>
                     <div onClick={() => handleLogout()} className="w-full text-red-600 text-sm py-2 cursor-pointer select-none flex items-center gap-2 px-4 hover:bg-gray-200 ">
                         <Icon icon="material-symbols:logout" width={18} />
                         <p>Logout</p>
