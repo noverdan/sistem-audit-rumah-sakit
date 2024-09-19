@@ -3,8 +3,10 @@ import Dropdown from "../../common/dropdown";
 import Button from "../../common/Button";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Icon } from "@iconify/react";
+import PropType from "prop-types";
 
-export default function InputPasien() {
+export default function InputPasien({ back }) {
     const statusOptions = ["Pasien Baru", "Pasien Lama", "Pasien Darurat"];
     const roomOptions = ["Kamar VIP", "Kamar Kelas 1", "Kamar Kelas 2", "Kamar Kelas 3"];
 
@@ -45,12 +47,18 @@ export default function InputPasien() {
             toast.error("Data gagal di Simpan");
         }
 
-     
+
     };
 
     return (
         <div>
-            <h1 className="text-left ml-64 mt-10 text-2xl font-sans font-semibold ">Input Data Pasien</h1>
+            <div className="flex items-center gap-32 w-full px-8 py-6">
+                <button onClick={() => back(false)} className="flex items-center gap-2 hover:text-primary-1 transition-all text-primary-3 font-medium">
+                    <Icon icon="ic:sharp-arrow-back" />
+                    <p>Kembali</p>
+                </button>
+                <h1 className="text-left  text-2xl font-sans font-semibold ">Input Data Pasien</h1>
+            </div>
             <form className="flex flex-col gap-8 mt-7 w-[627px] " onSubmit={submitDataPasien}>
 
                 <div className="flex flex-col font-sans font-medium w-[627px] gap-8  items-end">
@@ -131,7 +139,7 @@ export default function InputPasien() {
                         text={'Simpan Data Pasien'}
                         size={'large'}
                         type="submit"
-                        
+
                     />
                 </div>
 
@@ -139,3 +147,7 @@ export default function InputPasien() {
         </div>
     );
 }
+
+InputPasien.propTypes = {
+    back: PropType.func
+};

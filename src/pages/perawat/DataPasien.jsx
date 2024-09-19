@@ -41,7 +41,7 @@ export default function DataPasien() {
             }
             {
                 isInputPasien && (
-                    <InputPasien />
+                    <InputPasien back={(is) => setIsInputPasien(is)} />
                 )
             }
         </main>
@@ -79,7 +79,7 @@ function ListPasien({ data, isLoading }) {
                                 <td className="p-3 text-gray-500">{pasien.kategori}</td>
                                 <td className="p-3 text-gray-500">{pasien.tipeKamar}</td>
                                 <td className="p-3 text-gray-500">{pasien.statusPasien}</td>
-                                <td className="p-3 flex gap-2 items-center">
+                                <td className="p-3 flex gap-2 items-center w-16">
                                     <button className="btn-edit-pasien bg-green-500 text-white p-1 rounded-sm hover:bg-opacity-70">
                                         <Icon icon="tabler:edit" />
                                         <Tooltip
