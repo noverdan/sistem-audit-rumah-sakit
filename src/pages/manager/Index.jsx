@@ -5,6 +5,7 @@ import Pathway from "./Pathway";
 import Laporan from "./Laporan";
 import ManagemenAkun from "./ManagemenAkun";
 import DataDashboard from "./DataDashboard";
+import { useSelector } from "react-redux";
 
 const navList = [
     {
@@ -36,6 +37,17 @@ const navList = [
 ]
 
 function IndexManager() {
+    const user = useSelector((state) => state.user);
+    if (!user.username) {
+        return <Navigate to="/login" />;
+    } else if (user.role !== 2) {
+        if (user.role === 3) {
+            return <Navigate to="/p/dashboard" />;
+        } else if (user.role === 1) {
+            return <Navigate to="/admin/dashboard" />;
+        }
+    }
+
     return (
         <>
             <Sidebar navList={navList} />

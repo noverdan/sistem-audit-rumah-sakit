@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Sidebar from "../../components/layout/Sidebar";
 import DashboardPerawat from "./Dashboard";
 import DataPasien from "./DataPasien";
@@ -24,6 +25,17 @@ const navList = [
 ]
 
 function IndexPerawat() {
+    const user = useSelector((state) => state.user);
+    if (!user.username) {
+        return <Navigate to="/login" />;
+    } else if (user.role !== 3) {
+        if (user.role === 2) {
+            return <Navigate to="/m/dashboard" />;
+        } else if (user.role === 1) {
+            return <Navigate to="/admin/dashboard" />;
+        }
+    }
+
     return (
         <>
             <Sidebar navList={navList} />
