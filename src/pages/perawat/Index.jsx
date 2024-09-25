@@ -4,6 +4,7 @@ import DashboardPerawat from "./Dashboard";
 import DataPasien from "./DataPasien";
 import StatusPasien from "./StatusPasien";
 import { Route, Routes, Navigate } from "react-router-dom";
+import AuthMe from "../../utils/AuthMe";
 
 const navList = [
     {
@@ -26,28 +27,28 @@ const navList = [
 
 function IndexPerawat() {
     const user = useSelector((state) => state.user);
+
+
     if (!user.username) {
-        return <Navigate to="/login" />;
-    } else if (user.role !== 3) {
-        if (user.role === 2) {
-            return <Navigate to="/m/dashboard" />;
-        } else if (user.role === 1) {
-            return <Navigate to="/admin/dashboard" />;
-        }
+        return <AuthMe />
     }
 
-    return (
-        <>
-            <Sidebar navList={navList} />
-            <Routes>
-                <Route path="/" element={<Navigate to={"/p/dashboard"} />} />
-                <Route path="/dashboard" element={<DashboardPerawat />} />
-                <Route path="/data-pasien" element={<DataPasien />} />
-                <Route path="/status-pasien" element={<StatusPasien />} />
-                <Route path="/*" element={<Navigate to={"/p/dashboard"} />} />
-            </Routes>
-        </>
-    );
+    if (user.role == 3) {
+        return (
+            <>
+                <Sidebar navList={navList} />
+                <Routes>
+                    <Route path="/" element={<Navigate to={"/p/dashboard"} />} />
+                    <Route path="/dashboard" element={<DashboardPerawat />} />
+                    <Route path="/data-pasien" element={<DataPasien />} />
+                    <Route path="/status-pasien" element={<StatusPasien />} />
+                    <Route path="/*" element={<Navigate to={"/p/dashboard"} />} />
+                </Routes>
+            </>
+        );
+    }
+
+    return null
 }
 
 export default IndexPerawat;

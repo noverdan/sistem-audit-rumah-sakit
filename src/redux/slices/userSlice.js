@@ -2,36 +2,23 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
     name: "user",
-    initialState: initialUser(),
+    initialState: {},
     reducers: {
         login: (state, action) => {
+            state.user_id = action.payload.user_id;
             state.username = action.payload.username;
-            state.fullName = action.payload.fullName;
             state.role = action.payload.role;
         },
         logout: (state) => {
             localStorage.removeItem("token");
-            localStorage.removeItem("user");
+            localStorage.removeItem("refreshToken");
 
+            state.user_id = "";
             state.username = "";
-            state.fullName = "";
-            state.role = 0;
+            state.role = "";
         }
     }
 })
-
-function initialUser() {
-    const token = localStorage.getItem("token");
-    const user = localStorage.getItem("user");
-    if (user && token) {
-        return JSON.parse(atob(user));
-    }
-    return {
-        username: "",
-        fullName: "",
-        role: 0
-    }
-}
 
 export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;
