@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Dropdown from "../../common/dropdown";
+import Dropdown from "../../common/Dropdown";
 import Button from "../../common/Button";
 import toast from "react-hot-toast";
 import axios from "axios";
