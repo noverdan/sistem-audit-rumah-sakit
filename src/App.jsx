@@ -6,7 +6,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
 
-axios.defaults.baseURL = "http://103.23.198.43:5000/api/v1";
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 // axios.defaults.withCredentials = true;
 
 function App() {
