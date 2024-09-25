@@ -5,6 +5,8 @@ import Pathway from "./Pathway";
 import Laporan from "./Laporan";
 import ManagemenAkun from "./ManagemenAkun";
 import DataDashboard from "./DataDashboard";
+import { useSelector } from "react-redux";
+import AuthMe from "../../utils/AuthMe";
 
 const navList = [
     {
@@ -36,20 +38,29 @@ const navList = [
 ]
 
 function IndexManager() {
-    return (
-        <>
-            <Sidebar navList={navList} />
-            <Routes>
-                <Route path="/" element={<Navigate to={"/m/dashboard"} />} />
-                <Route path="/dashboard" element={<DashboardManager />} />
-                <Route path="/pathway" element={<Pathway />} />
-                <Route path="/laporan" element={<Laporan />} />
-                <Route path="/manajemen-akun" element={<ManagemenAkun />} />
-                <Route path="/data-dashboard" element={<DataDashboard />} />
-                <Route path="/*" element={<Navigate to={"/m/dashboard"} />} />
-            </Routes>
-        </>
-    );
+    const user = useSelector((state) => state.user);
+
+    if (!user.username) {
+        return <AuthMe />
+    };
+
+    if (user.role == 2) {
+        return (
+            <>
+                <Sidebar navList={navList} />
+                <Routes>
+                    <Route path="/" element={<Navigate to={"/m/dashboard"} />} />
+                    <Route path="/dashboard" element={<DashboardManager />} />
+                    <Route path="/pathway" element={<Pathway />} />
+                    <Route path="/laporan" element={<Laporan />} />
+                    <Route path="/manajemen-akun" element={<ManagemenAkun />} />
+                    <Route path="/data-dashboard" element={<DataDashboard />} />
+                    <Route path="/*" element={<Navigate to={"/m/dashboard"} />} />
+                </Routes>
+            </>
+        );
+    }
+    return null;
 }
 
 export default IndexManager;
